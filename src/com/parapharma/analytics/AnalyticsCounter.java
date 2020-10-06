@@ -3,6 +3,7 @@ package com.parapharma.analytics;
 
 import java.util.Scanner;
 
+import com.parapharma.modeles.ReadSymptomDataFromFile;
 import com.parapharma.modeles.ecrireFile;
 
 public class AnalyticsCounter {

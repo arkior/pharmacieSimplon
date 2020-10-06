@@ -1,4 +1,4 @@
-package com.parapharma.analytics;
+package com.parapharma.modeles;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
