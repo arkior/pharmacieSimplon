@@ -1,4 +1,4 @@
-package com.parapharma.symptom;
+package com.parapharma.traitementFichierSymptom;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

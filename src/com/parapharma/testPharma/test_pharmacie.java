@@ -3,8 +3,8 @@ package com.parapharma.testPharma;
 import java.util.Scanner;
 
 import com.parapharma.analytics.AnalyticsCounter;
-import com.parapharma.symptom.ReadSymptomDataFromFile;
-import com.parapharma.symptom.WriteSymptomDataFromFile;
+import com.parapharma.traitementFichierSymptom.ReadSymptomDataFromFile;
+import com.parapharma.traitementFichierSymptom.WriteSymptomDataFromFile;
 
 
 public class test_pharmacie {

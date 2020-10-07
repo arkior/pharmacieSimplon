@@ -1,4 +1,4 @@
-package com.parapharma.result_out;
+package com.parapharma.traitementFichierResult;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

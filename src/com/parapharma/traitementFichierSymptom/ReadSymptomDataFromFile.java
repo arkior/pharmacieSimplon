@@ -1,10 +1,12 @@
-package com.parapharma.symptom;
+package com.parapharma.traitementFichierSymptom;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.parapharma.interfaces.ISymptomReader;
 
 
 /**

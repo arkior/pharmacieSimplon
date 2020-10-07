@@ -2,8 +2,8 @@ package com.parapharma.analytics;
 
 import java.util.HashMap;
 
-import com.parapharma.result_out.ReadWriteResult;
-import com.parapharma.symptom.ReadSymptomDataFromFile;
+import com.parapharma.traitementFichierResult.ReadWriteResult;
+import com.parapharma.traitementFichierSymptom.ReadSymptomDataFromFile;
 
 
 public class AnalyticsCounter 
