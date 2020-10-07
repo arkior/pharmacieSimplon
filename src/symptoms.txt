@@ -1,4 +1,3 @@
-fever
 dialated pupils
 dry mouth
 inflamation
@@ -25,7 +24,6 @@ stomach pain
 anxiety
 dizziness
 water retention
-fever
 low blood pressure
 inflamation
 inflamation
@@ -98,3 +96,6 @@ anxiety
 anxiety
 cough
 blurred vision
+toto
+toto
+toto

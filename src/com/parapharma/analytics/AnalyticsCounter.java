@@ -34,6 +34,7 @@ public class AnalyticsCounter
 		return this.readWriteResult.getListeSymptomesOccurencesVide();
 	}
 	
+	/*
 	public void getResult()
 	{
 		for(String i : this.readWriteResult.getListeSymptomesOccurencesVide().keySet()) 
@@ -43,7 +44,7 @@ public class AnalyticsCounter
 		System.out.println("\n");
 	}
 	
-	
+	*/
 	
 	public static void init()
 	{
@@ -55,7 +56,7 @@ public class AnalyticsCounter
 		AnalyticsCounter toto = new AnalyticsCounter();
 		toto.setSymptomesOccurence();
 		ReadWriteResult toto2 = new ReadWriteResult();
-		toto2.getFichierResult();
+		toto2.getResult();
 		
 	}
 	

@@ -6,8 +6,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
-public class ReadWriteResult
+import com.parapharma.interfaces.ISymptomReader;
+
+public class ReadWriteResult implements ISymptomReader
 {
 
 	private String cheminFichierAEcrire;
@@ -39,7 +42,7 @@ public class ReadWriteResult
 			FileWriter writer = new FileWriter (this.cheminFichierAEcrire);
 			for (String i :this.listeSymptomesOccurences.keySet() ) 
 			{
-				writer.write("symptomes : "+i+ " "+this.listeSymptomesOccurences.get(i)+"\n");
+				writer.write("symptome : "+i+ " "+this.listeSymptomesOccurences.get(i)+"\n");
 			}
 			writer.close();
 		}
@@ -50,8 +53,11 @@ public class ReadWriteResult
 
 	}
 	
-	public  void getFichierResult()
-	{
+	
+	@Override
+	public List<String> GetSymptoms() {
+			
+			
 		if (this.cheminFichierAEcrire != null)
 		{
 			try {
@@ -60,7 +66,6 @@ public class ReadWriteResult
 				
 				while (line != null) {
 					this.result.add(line);
-					System.out.println(line);
 					line = reader.readLine();
 				}
 				reader.close();
@@ -68,7 +73,16 @@ public class ReadWriteResult
 				e.printStackTrace();
 			}
 		}
+			
+			return result;
+		}
 	
+	public void getResult() 
+	{
+		for(String i : this.GetSymptoms()) 
+		{
+			System.out.println("symptome : " +i);
+		}
 	}
 
 }

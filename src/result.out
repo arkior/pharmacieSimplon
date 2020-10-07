@@ -1,25 +1,24 @@
-symptomes : toto 2
-symptomes : constricted pupils 3
-symptomes : fever 7
-symptomes : stiff neck 4
-symptomes : cough 6
-symptomes : low blood pressure 4
-symptomes : shortness of breath 3
-symptomes : inflamation 7
-symptomes : water retention 1
-symptomes : dialated pupils 4
-symptomes : stomach pain 3
-symptomes : titi 2
-symptomes : tremor 4
-symptomes : dizziness 5
-symptomes : blindness 1
-symptomes : insomnia 4
-symptomes : nausea 5
-symptomes : rapid heart rate 1
-symptomes : dry mouth 8
-symptomes : anxiety 5
-symptomes : rash 4
-symptomes : arrhythmias 3
-symptomes : high blood pressure 10
-symptomes : headache 3
-symptomes : blurred vision 5
+symptome : toto 3
+symptome : tremor 4
+symptome : dizziness 5
+symptome : blindness 1
+symptome : constricted pupils 3
+symptome : fever 5
+symptome : stiff neck 4
+symptome : cough 6
+symptome : insomnia 4
+symptome : nausea 5
+symptome : low blood pressure 4
+symptome : rapid heart rate 1
+symptome : dry mouth 8
+symptome : anxiety 5
+symptome : rash 4
+symptome : shortness of breath 3
+symptome : arrhythmias 3
+symptome : inflamation 7
+symptome : high blood pressure 10
+symptome : water retention 1
+symptome : dialated pupils 4
+symptome : headache 3
+symptome : stomach pain 3
+symptome : blurred vision 5

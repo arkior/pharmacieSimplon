@@ -1,5 +1,6 @@
 package com.parapharma.testPharma;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 import com.parapharma.analytics.AnalyticsCounter;
@@ -17,10 +18,10 @@ public class test_pharmacie {
 		{
 			
 			System.out.println("\n***************************************************************\n                              MENU                                      \n***************************************************************\n");
-			System.out.println("\nque voulez vous faire ?\n\n1- lire le fichier (symptoms.txt)\n2- voir les occurences du fichier (symptoms.txt)\n3- ajouter un symptome\n4- quitter");
+			System.out.println("\nque voulez vous faire ?\n\n1- lire le fichier (symptoms.txt)\n2- voir les occurences du fichier (symptoms.txt)\n3- ajouter un symptome\n4- supprimer un symptome du fichier(symptoms.txt)\n5- quitter");
 			String choixTape = new String(choixUtilisateur.next()).toUpperCase();
 			int choixUser = (int) choixTape.charAt(0);
-			if(choixUser ==49 ||choixUser ==50 ||choixUser ==51 || choixUser ==52 )
+			if(choixUser ==49 ||choixUser ==50 ||choixUser ==51 || choixUser ==52  || choixUser ==53 )
 			{
 				
 				switch(choixUser) 
@@ -33,8 +34,11 @@ public class test_pharmacie {
 					break;
 				case 51:
 					WriteSymptomDataFromFile.setSymptoms();
-					break;	
+					break;
 				case 52:
+					WriteSymptomDataFromFile.supprimerSymptome();
+					break;
+				case 53:
 					choixOk = true;
 					break;
 				
@@ -51,6 +55,55 @@ public class test_pharmacie {
 		
 		System.out.println("merci au revoir...");
 
+		
+		
+		
+		
+		
+		
+		
+		
+		HashMap<String,Integer>listesSymptomes = new HashMap<>();
+		
+		
+		
+		
+		listesSymptomes.put("motDeTete",2);
+	    
+		       
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }

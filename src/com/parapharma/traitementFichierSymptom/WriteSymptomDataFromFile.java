@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Scanner;
 
 public class WriteSymptomDataFromFile
@@ -20,7 +21,7 @@ public class WriteSymptomDataFromFile
 	public static  void setSymptoms() 
 	{
 			WriteSymptomDataFromFile toto = new WriteSymptomDataFromFile("src/symptoms.txt");
-			Scanner sc = new Scanner(System.in);
+			
 			try 
 			{
 			//FileWriter writer = new FileWriter (toto.cheminFichierAEcrire,true);
@@ -28,25 +29,27 @@ public class WriteSymptomDataFromFile
 			boolean sortir = false;
 			do 
 			{
+				Scanner sc = new Scanner(System.in);
 				System.out.println("veuillez saisir le symptome a rajouter");
-				String symptom= sc.next();
-				pOut.print(symptom+ "\n");
+				String symptom= sc.nextLine();
+				
 				
 				System.out.println("voulez vous rajouter un symptome O/N ?");
 				String choix = new String (sc.next().toUpperCase());
 				int valueChoix = (int) choix.charAt(0);
 				if (valueChoix== 79 || valueChoix== 78)
 				{
-					
+					pOut.print(symptom+ "\n");
 					switch(valueChoix)
 					{
 					case 78 :
 						sortir = true;
 						break;
 					case 79 : 
-						sortir = false;
 						break;
 					}
+					
+					
 				}
 				else
 				{
@@ -62,6 +65,45 @@ public class WriteSymptomDataFromFile
 				e.printStackTrace();
 			}
 			
+	}
+	
+	public boolean supprimerValeur(String nom)
+	{
+		boolean resultat = false; ;
+		String valeurParametre = new String(nom);
+		ReadSymptomDataFromFile toto = new ReadSymptomDataFromFile("src/symptoms.txt");
+		List<String> listeProvisoire = toto.GetSymptoms();
+		resultat =  listeProvisoire.remove(valeurParametre);
+			
+		try 
+		{
+			//FileWriter writer = new FileWriter (toto.cheminFichierAEcrire,true);
+			PrintWriter pOut = new PrintWriter(new BufferedWriter(new FileWriter (this.cheminFichierAEcrire)));
+			
+			for(String symptom : listeProvisoire)
+			{
+				
+				  pOut.print(symptom+ "\n");
+			}
+			
+			pOut.close();
+		}catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		return resultat;
+		
+	}
+	
+	public static void supprimerSymptome() 
+	{
+		WriteSymptomDataFromFile toto = new WriteSymptomDataFromFile("src/symptoms.txt");
+		Scanner choixValeur = new Scanner(System.in);
+		System.out.println("quelle symptome voulez vous supprimer du fichier symptome.txt ?");
+		String symptomeChoisi = choixValeur.nextLine();
+		boolean resultat = toto.supprimerValeur(symptomeChoisi);
+		String message = (resultat)?"suppression reussi":"le symptome n'existe pas dans votre fichier";		
+		System.out.println(message);
 	}
 
 }
