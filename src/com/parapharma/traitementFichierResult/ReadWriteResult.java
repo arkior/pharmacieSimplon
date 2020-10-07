@@ -81,7 +81,7 @@ public class ReadWriteResult implements ISymptomReader
 	{
 		for(String i : this.GetSymptoms()) 
 		{
-			System.out.println("symptome : " +i);
+			System.out.println(i);
 		}
 	}
 
