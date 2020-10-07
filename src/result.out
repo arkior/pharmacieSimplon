@@ -1,23 +1,25 @@
-tremor  : 4 Occurences
-dizziness  : 5 Occurences
-blindness  : 1 Occurences
-constricted pupils  : 3 Occurences
-fever  : 8 Occurences
-stiff neck  : 4 Occurences
-cough  : 6 Occurences
-insomnia  : 4 Occurences
-nausea  : 5 Occurences
-low blood pressure  : 4 Occurences
-rapid heart rate  : 1 Occurences
-dry mouth  : 8 Occurences
-anxiety  : 5 Occurences
-rash  : 4 Occurences
-shortness of breath  : 3 Occurences
-arrhythmias  : 3 Occurences
-inflamation  : 7 Occurences
-high blood pressure  : 10 Occurences
-water retention  : 1 Occurences
-dialated pupils  : 4 Occurences
-headache  : 3 Occurences
-stomach pain  : 3 Occurences
-blurred vision  : 5 Occurences
+symptomes : toto 2
+symptomes : constricted pupils 3
+symptomes : fever 7
+symptomes : stiff neck 4
+symptomes : cough 6
+symptomes : low blood pressure 4
+symptomes : shortness of breath 3
+symptomes : inflamation 7
+symptomes : water retention 1
+symptomes : dialated pupils 4
+symptomes : stomach pain 3
+symptomes : titi 2
+symptomes : tremor 4
+symptomes : dizziness 5
+symptomes : blindness 1
+symptomes : insomnia 4
+symptomes : nausea 5
+symptomes : rapid heart rate 1
+symptomes : dry mouth 8
+symptomes : anxiety 5
+symptomes : rash 4
+symptomes : arrhythmias 3
+symptomes : high blood pressure 10
+symptomes : headache 3
+symptomes : blurred vision 5

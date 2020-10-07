@@ -1,4 +1,4 @@
-package com.parapharma.modeles;
+package com.parapharma.symptom;
 
 import java.util.List;
 

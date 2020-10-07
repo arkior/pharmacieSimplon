@@ -1,4 +1,4 @@
-package com.parapharma.modeles;
+package com.parapharma.symptom;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -20,9 +20,12 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	 * 
 	 * @param filepath a full or partial path to file with symptom strings in it, one per line
 	 */
-	public ReadSymptomDataFromFile (String filepath) {
+	public ReadSymptomDataFromFile (String filepath)
+	{
 		this.filepath = filepath;
 	}
+	
+	
 	
 	@Override
 	public List<String> GetSymptoms() {
@@ -46,20 +49,24 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		return result;
 	}
 	
+	
+	
 	public static void init()
 	{
 		//Scanner choixUtilisateur = new Scanner(System.in);
 		//System.out.println("\nVeuiller me donner le chemin du fichier a lire ?\n");
 		String path ="src/symptoms.txt" ;                                    //choixUtilisateur.next() ;
 		ReadSymptomDataFromFile toto = new ReadSymptomDataFromFile(path);
-		;
-		int i = 1;
-		for (String symptone : toto.GetSymptoms()) 
+		toto.getListesSymptoms();
+	
+	}
+	
+	public void getListesSymptoms()
+	{
+		for(String symptome: this.GetSymptoms())
 		{
-			System.out.println(i+": "+symptone);
-			i++;
+			System.out.println("symptome : "+symptome);
 		}
-		
 	}
 	
 

@@ -1,54 +1,67 @@
 package com.parapharma.analytics;
 
+import java.util.HashMap;
 
-import java.util.Scanner;
+import com.parapharma.result_out.ReadWriteResult;
+import com.parapharma.symptom.ReadSymptomDataFromFile;
 
-import com.parapharma.modeles.ReadSymptomDataFromFile;
-import com.parapharma.modeles.ecrireFile;
 
-public class AnalyticsCounter {
-		
-	public static void main(String args[]) throws Exception
+public class AnalyticsCounter 
+{
+	private ReadSymptomDataFromFile readSymptom;
+	private ReadWriteResult readWriteResult;
+	private String fichierAnalyser;
+	
+	public AnalyticsCounter() 
 	{
-		
-		
-		
-		
-		Scanner choixUtilisateur = new Scanner(System.in);
-		boolean choixOk = false;
-		do 
-		{
-			System.out.println("\n***************************************************************\n                              MENU                                      \n***************************************************************\n");
-			System.out.println("\nque voulez vous faire ?\n1- lire le fichier (symptoms.txt)\n2- voir les occurences du fichier (symptoms.txt)\n3- quitter");
-			String choixTape = new String(choixUtilisateur.next()).toUpperCase();
-			int choixUser = (int) choixTape.charAt(0);
-			if(choixUser ==49 ||choixUser ==50 ||choixUser ==51 )
-			{
-				
-				switch(choixUser) 
-				{
-				case 49:
-					ReadSymptomDataFromFile.init();
-					break;
-				case 50:
-					ecrireFile.init();
-					break;
-				case 51:
-					choixOk = true;
-					break;
-				}
-			}
-			else
-			{
-				System.out.println("ce choix n'est pas dans la liste\nveuillez recommencer");
-				choixOk = false;
-				
-			}
-		}
-		while(!choixOk);
-		choixUtilisateur.close();
-		System.out.println("merci au revoir...");
-		
-
+		this.fichierAnalyser = "src/symptoms.txt";
 	}
+	
+	
+	private HashMap<String,Integer> setSymptomesOccurence()
+	{
+		this.readSymptom = new ReadSymptomDataFromFile(this.fichierAnalyser);
+		this.readWriteResult = new ReadWriteResult();
+		
+			for(String symptome : this.readSymptom.GetSymptoms())
+			{
+				   Integer count = this.readWriteResult.getListeSymptomesOccurencesVide().get(symptome);
+				   this.readWriteResult.getListeSymptomesOccurencesVide().put(symptome, (count == null) ? 1 : count + 1);  
+			}
+			this.readWriteResult.setEcriture();
+				
+
+		return this.readWriteResult.getListeSymptomesOccurencesVide();
+	}
+	
+	public void getResult()
+	{
+		for(String i : this.readWriteResult.getListeSymptomesOccurencesVide().keySet()) 
+		{
+			System.out.println("symptome : "+i + " : "+this.readWriteResult.getListeSymptomesOccurencesVide().get(i)+"\n");
+		}
+		System.out.println("\n");
+	}
+	
+	
+	
+	public static void init()
+	{
+		//Scanner choixUtilisateur = new Scanner(System.in);
+		//System.out.println("\nVeuiller me donner le chemin du fichier a lire ?\n");
+		//String pathLire = choixUtilisateur.next() ;
+		//System.out.println("\nVeuiller me donner le chemin du fichier dans lequel vous voulez ecrire ?\n");
+		//String pathEcrire = choixUtilisateur.next() ;
+		AnalyticsCounter toto = new AnalyticsCounter();
+		toto.setSymptomesOccurence();
+		ReadWriteResult toto2 = new ReadWriteResult();
+		toto2.getFichierResult();
+		
+	}
+	
+	
+	
+	
+	
+	
 }
