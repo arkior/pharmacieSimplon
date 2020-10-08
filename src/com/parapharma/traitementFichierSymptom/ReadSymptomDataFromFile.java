@@ -4,74 +4,96 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.parapharma.interfaces.ISymptomReader;
 
-
 /**
- * Simple brute force implementation
- *
+ * <b>class ReadSymptomDataFromFile</b>
+ * ReadSymptomDataFromFile est une classe qui ne lit que les donnees dans le fichier symptoms.txt
+ * @author gautherot christophe
+ * @version version 3 
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	private String filepath;
 	private ArrayList<String> result = new ArrayList<String>();
 	
-	/**
-	 * 
-	 * @param filepath a full or partial path to file with symptom strings in it, one per line
-	 */
-	public ReadSymptomDataFromFile (String filepath)
+
+    /** 
+     * <b>Constructeur ReadSymptomDataFromFile()</b> 
+     * qui initialise directement le fichier a lire
+     */
+	public ReadSymptomDataFromFile ()
 	{
-		this.filepath = filepath;
+		this.filepath = "src/symptoms.txt";
 	}
 	
 	
-	
+
+	public String getFilepath()
+	{
+		return this.filepath;
+	}
+
+
+
+	/**
+	 * <b>methode getSymptoms()</b> 
+     * methode de l'interface redefinie qui lit le fichier symptoms.txt 
+     * @return retourne une List des symptomes triés 
+     */
 	@Override
-	public List<String> GetSymptoms() {
+	public List<String> GetSymptoms()
+	{
 		
 		
-		if (this.filepath != null) {
+		if (this.filepath != null)
+		{
 			try {
 				BufferedReader reader = new BufferedReader (new FileReader(this.filepath));
 				String line = reader.readLine();
 				
-				while (line != null) {
+				while (line != null) 
+				{
 					this.result.add(line);
 					line = reader.readLine();
 				}
 				reader.close();
-			} catch (IOException e) {
+			}
+			catch (IOException e)
+			{
 				e.printStackTrace();
 			}
 		}
+		Collections.sort(this.result);
+		return this.result;
+	}
+
+	 /** 
+	  * <b>methode getListesSymptoms()</b>
+     * methode qui lit la liste de symptomes du fichier symptoms.txt 
+     */ 
+	public void getListesSymptoms()
+	{
+		for(String s : this.GetSymptoms()) 
+		{
+			System.out.println("symptome : "+ s);
+		}
 		
-		return result;
 	}
 	
-	
-	
+   /** 
+    * <b>methode init()</b>
+     * methode qui appelee dans le Main 
+     */
 	public static void init()
 	{
-		//Scanner choixUtilisateur = new Scanner(System.in);
-		//System.out.println("\nVeuiller me donner le chemin du fichier a lire ?\n");
-		String path ="src/symptoms.txt" ;                                    //choixUtilisateur.next() ;
-		ReadSymptomDataFromFile toto = new ReadSymptomDataFromFile(path);
+		ReadSymptomDataFromFile toto = new ReadSymptomDataFromFile();
 		toto.getListesSymptoms();
 	
 	}
-	
-	public void getListesSymptoms()
-	{
-		for(String symptome: this.GetSymptoms())
-		{
-			System.out.println("symptome : "+symptome);
-		}
-	}
-	
-
 		
 		
 		

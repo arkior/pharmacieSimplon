@@ -1,24 +1,25 @@
-symptome : tremor 4
-symptome : dizziness 5
-symptome : blindness 1
 symptome : constricted pupils 3
-symptome : sida 1
 symptome : fever 5
 symptome : stiff neck 4
 symptome : cough 6
+symptome : low blood pressure 4
+symptome : shortness of breath 3
+symptome : inflamation 7
+symptome : water retention 1
+symptome : dialated pupils 4
+symptome : stomach pain 3
+symptome : tremor 4
+symptome : dizziness 5
+symptome : blindness 1
+symptome : toux 2
+symptome : asthme 1
 symptome : insomnia 4
 symptome : nausea 5
-symptome : low blood pressure 4
 symptome : rapid heart rate 1
 symptome : dry mouth 8
 symptome : anxiety 5
 symptome : rash 4
-symptome : shortness of breath 3
 symptome : arrhythmias 3
-symptome : inflamation 7
 symptome : high blood pressure 10
-symptome : water retention 1
-symptome : dialated pupils 4
 symptome : headache 3
-symptome : stomach pain 3
 symptome : blurred vision 5
