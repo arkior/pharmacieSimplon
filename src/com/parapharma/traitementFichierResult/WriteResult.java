@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import com.parapharma.interfaces.ISymptomReader;
 
@@ -62,7 +63,10 @@ public class WriteResult
 		}
 		catch(IOException e)
 		{
-			e.printStackTrace();
+			Scanner sc = new Scanner(System.in);
+			System.out.println("votre dossier est introuvable veuillez specifier le chemin du fichier dans lequel vou voulez ecrire ?");
+			this.cheminFichierAEcrire = sc.nextLine();
+			this.setEcriture();
 		}
 
 	}

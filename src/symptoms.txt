@@ -43,7 +43,6 @@ fever
 fever
 fever
 fever
-fever
 headache
 headache
 headache
@@ -92,6 +91,8 @@ stiff neck
 stomach pain
 stomach pain
 stomach pain
+toux
+toux
 toux
 tremor
 tremor

@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 import com.parapharma.interfaces.ISymptomReader;
 
@@ -64,7 +65,11 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 			}
 			catch (IOException e)
 			{
-				e.printStackTrace();
+				Scanner sc = new Scanner(System.in);
+				System.out.println("votre dossier est introuvable...\nveuillez specifier le chemin du fichier que vous voulez lire ?");
+				this.filepath = sc.nextLine();
+				this.GetSymptoms();
+				//e.printStackTrace();
 			}
 		}
 		Collections.sort(this.result);

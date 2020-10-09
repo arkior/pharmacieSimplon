@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class WriteSymptomDataFromFile
 {
 	private String cheminFichierAEcrire;
-	
+	private ReadSymptomDataFromFile readSymptom ;
 	
 	
 	 /** 
@@ -77,7 +77,9 @@ public class WriteSymptomDataFromFile
 			pOut.close();
 			}catch(IOException e) 
 			{
+				
 				e.printStackTrace();
+				
 			}
 			
 	}
@@ -92,8 +94,8 @@ public class WriteSymptomDataFromFile
 	{
 		boolean resultat = false; ;
 		String valeurParametre = new String(nom);
-		ReadSymptomDataFromFile toto = new ReadSymptomDataFromFile();
-		List<String> listeProvisoire = toto.GetSymptoms();
+		this.readSymptom = new ReadSymptomDataFromFile();
+		List<String> listeProvisoire = this.readSymptom.GetSymptoms();
 		resultat =  listeProvisoire.remove(valeurParametre);
 			
 		try 
@@ -110,7 +112,8 @@ public class WriteSymptomDataFromFile
 			pOut.close();
 		}catch(IOException e)
 		{
-			e.printStackTrace();
+			this.erreurNomFichier();
+			this.supprimerValeur(nom);
 		}
 		return resultat;
 		
@@ -128,6 +131,15 @@ public class WriteSymptomDataFromFile
 		boolean resultat = toto.supprimerValeur(symptomeChoisi);
 		String message = (resultat)?"suppression reussi":"le symptome n'existe pas dans votre fichier";		
 		System.out.println(message);
+	}
+	
+	public String erreurNomFichier()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("votre dossier est introuvable...\nveuillez specifier le chemin du fichier dans lequel vou voulez ecrire ?");
+		String path = sc.nextLine();
+		return path;
+		
 	}
 
 }
